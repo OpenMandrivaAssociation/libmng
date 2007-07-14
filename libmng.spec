@@ -6,7 +6,7 @@
 Summary:	A library for handling MNG files
 Name:		libmng
 Version:	1.0.10
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	Distributable (see LICENSE)
 Group:		System/Libraries
 URL:		http://www.libmng.com/
@@ -40,7 +40,7 @@ Summary:	Header files for libmng
 Group:		Development/C
 Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel mng-devel libmng0.9.3-devel libmng0-devel %{libname}-devel = %{version}-%{release}
-Obsoletes:	%{name}-devel libmng0.9.3-devel libmng0-devel %{libname}-devel
+Obsoletes:	libmng0.9.3-devel libmng0-devel %{libname}-devel %{_lib}mng1-devel
 
 %description -n	%{develname}
 The libmng library supports decoding, displaying, encoding, and various other
