@@ -12,7 +12,7 @@ Group:		System/Libraries
 URL:		http://www.libmng.com/
 Source0:	http://prdownloads.sourceforge.net/libmng/%{name}-%{version}.tar.gz
 BuildRequires:	libjpeg-devel
-BuildRequires:	liblcms-devel
+BuildRequires:	lcms-devel
 BuildRequires:	zlib-devel
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
