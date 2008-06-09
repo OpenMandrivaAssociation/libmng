@@ -89,9 +89,13 @@ install -m644 doc/man/libmng.3 -D %{buildroot}%{_mandir}/man3/libmng.3
 install -m644 doc/man/jng.5 -D %{buildroot}%{_mandir}/man5/jng.5
 install -m644 doc/man/mng.5 -D %{buildroot}%{_mandir}/man5/mng.5
 
+%if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
+%endif
 
+%if %mdkversion < 200900
 %postun -n %{libname} -p /sbin/ldconfig
+%endif
 
 %clean
 rm -rf %{buildroot}
