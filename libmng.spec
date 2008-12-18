@@ -6,7 +6,7 @@
 Summary:	A library for handling MNG files
 Name:		libmng
 Version:	1.0.10
-Release:	%mkrel 7
+Release:	%mkrel 8
 License:	Distributable (see LICENSE)
 Group:		System/Libraries
 URL:		http://www.libmng.com/
@@ -14,7 +14,7 @@ Source0:	http://prdownloads.sourceforge.net/libmng/%{name}-%{version}.tar.gz
 BuildRequires:	libjpeg-devel
 BuildRequires:	lcms-devel
 BuildRequires:	zlib-devel
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The libmng library supports decoding, displaying, encoding, and various other
