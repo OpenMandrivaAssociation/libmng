@@ -5,7 +5,7 @@
 Summary:	A library for handling MNG files
 Name:		libmng
 Version:	1.0.10
-Release:	16
+Release:	17
 License:	Distributable (see LICENSE)
 Group:		System/Libraries
 Url:		http://www.libmng.com/
