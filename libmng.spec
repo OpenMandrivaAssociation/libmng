@@ -1,4 +1,4 @@
-%define major 1
+%define major 2
 %define libname %mklibname mng %{major}
 %define devname %mklibname -d mng
 
@@ -9,7 +9,7 @@ Release:	1
 License:	Distributable (see LICENSE)
 Group:		System/Libraries
 Url:		http://www.libmng.com/
-Source0:	http://prdownloads.sourceforge.net/libmng/%{name}-%{version}.tar.gz
+Source0:	http://prdownloads.sourceforge.net/libmng/%{name}-%{version}.tar.xz
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(lcms2)
 BuildRequires:	pkgconfig(zlib)
@@ -63,6 +63,7 @@ This package contains header files needed for development.
 %doc CHANGES LICENSE README README.contrib README.examples
 %doc doc/Plan1.png doc/Plan2.png doc/doc.readme doc/libmng.txt
 %{_includedir}/*
+%{_libdir}/pkgconfig/libmng.pc
 %{_libdir}/*.so
 %{_mandir}/man*/*
 
