@@ -1,18 +1,17 @@
-%define major	1
-%define libname	%mklibname mng %{major}
-%define devname	%mklibname -d mng
+%define major 1
+%define libname %mklibname mng %{major}
+%define devname %mklibname -d mng
 
 Summary:	A library for handling MNG files
 Name:		libmng
-Version:	1.0.10
-Release:	20
+Version:	2.0.2
+Release:	1
 License:	Distributable (see LICENSE)
 Group:		System/Libraries
 Url:		http://www.libmng.com/
 Source0:	http://prdownloads.sourceforge.net/libmng/%{name}-%{version}.tar.gz
-Patch0:		libmng-1.0.10-automake1.12.patch
 BuildRequires:	jpeg-devel
-BuildRequires:	pkgconfig(lcms)
+BuildRequires:	pkgconfig(lcms2)
 BuildRequires:	pkgconfig(zlib)
 
 %description
@@ -38,7 +37,7 @@ library by Marti Maria Saguar
 Summary:	Header files for libmng
 Group:		Development/C
 Requires:	%{libname} = %{version}-%{release}
-Provides:	mng-devel = %{version}-%{release}
+#Provides:	mng-devel = %{version}-%{release}
 Obsoletes:	%{mklibname -s -d mng} < 1.0.10-15
 
 %description -n	%{devname}
@@ -47,22 +46,15 @@ This package contains header files needed for development.
 %prep
 %setup -q
 %apply_patches
-cp -a makefiles/{configure.in,Makefile.am} ./
-#aclocal; libtoolize --force; automake -a; autoconf
-autoreconf -fi
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static
 
 %make
 
 %install
 %makeinstall_std
-
-install -m644 doc/man/libmng.3 -D %{buildroot}%{_mandir}/man3/libmng.3
-install -m644 doc/man/jng.5 -D %{buildroot}%{_mandir}/man5/jng.5
-install -m644 doc/man/mng.5 -D %{buildroot}%{_mandir}/man5/mng.5
 
 %files -n %{libname}
 %{_libdir}/libmng.so.%{major}*
