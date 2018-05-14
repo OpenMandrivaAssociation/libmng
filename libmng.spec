@@ -5,7 +5,7 @@
 Summary:	A library for handling MNG files
 Name:		libmng
 Version:	2.0.3
-Release:	4
+Release:	5
 License:	Distributable (see LICENSE)
 Group:		System/Libraries
 Url:		http://www.libmng.com/
@@ -25,6 +25,7 @@ library by Marti Maria Saguar
 Summary:	A library for handling MNG files
 Group:		System/Libraries
 Provides:	%{name} = %{version}-%{release}
+Requires:	pkgconfig(zlib)
 
 %description -n	%{libname}
 The libmng library supports decoding, displaying, encoding, and various other
