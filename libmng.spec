@@ -5,7 +5,7 @@
 Summary:	A library for handling MNG files
 Name:		libmng
 Version:	2.0.3
-Release:	6
+Release:	7
 License:	Distributable (see LICENSE)
 Group:		System/Libraries
 Url:		http://www.libmng.com/
@@ -24,8 +24,7 @@ library by Marti Maria Saguar
 %package -n	%{libname}
 Summary:	A library for handling MNG files
 Group:		System/Libraries
-Provides:	%{name} = %{version}-%{release}
-Requires:	pkgconfig(zlib)
+Provides:	%{name} = %{EVRD}
 
 %description -n	%{libname}
 The libmng library supports decoding, displaying, encoding, and various other
@@ -37,25 +36,25 @@ library by Marti Maria Saguar
 %package -n	%{devname}
 Summary:	Header files for libmng
 Group:		Development/C
-Requires:	%{libname} = %{version}-%{release}
-#Provides:	mng-devel = %{version}-%{release}
+Requires:	%{libname} = %{EVRD}
+#Provides:	mng-devel = %{EVRD}
 Obsoletes:	%{mklibname -s -d mng} < 1.0.10-15
+Requires:	pkgconfig(zlib)
 
 %description -n	%{devname}
 This package contains header files needed for development.
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 
 %build
 %configure \
 	--disable-static
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/libmng.so.%{major}*
