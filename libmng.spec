@@ -5,7 +5,7 @@
 Summary:	A library for handling MNG files
 Name:		libmng
 Version:	2.0.3
-Release:	7
+Release:	8
 License:	Distributable (see LICENSE)
 Group:		System/Libraries
 Url:		http://www.libmng.com/
@@ -39,6 +39,8 @@ Group:		Development/C
 Requires:	%{libname} = %{EVRD}
 #Provides:	mng-devel = %{EVRD}
 Obsoletes:	%{mklibname -s -d mng} < 1.0.10-15
+Requires:	jpeg-devel
+Requires:	pkgconfig(lcms2)
 Requires:	pkgconfig(zlib)
 
 %description -n	%{devname}
@@ -66,4 +68,3 @@ This package contains header files needed for development.
 %{_libdir}/pkgconfig/libmng.pc
 %{_libdir}/*.so
 %{_mandir}/man*/*
-
