@@ -8,7 +8,7 @@ Version:	2.0.3
 Release:	10
 License:	Distributable (see LICENSE)
 Group:		System/Libraries
-Url:		http://www.libmng.com/
+Url:		https://www.libmng.com/
 Source0:	http://prdownloads.sourceforge.net/libmng/%{name}-%{version}.tar.xz
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(lcms2)
