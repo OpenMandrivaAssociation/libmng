@@ -10,6 +10,11 @@ License:	Distributable (see LICENSE)
 Group:		System/Libraries
 Url:		https://www.libmng.com/
 Source0:	http://prdownloads.sourceforge.net/libmng/%{name}-%{version}.tar.xz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(lcms2)
 BuildRequires:	pkgconfig(zlib)
